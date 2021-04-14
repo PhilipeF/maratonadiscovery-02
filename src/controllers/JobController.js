@@ -3,7 +3,6 @@ const Profile = require("../model/Profile");
 const JobUtils = require("../utils/JobUtils");
 
 module.exports = {
- 
   create(req, res) {
     return res.render("job");
   },
@@ -13,13 +12,14 @@ module.exports = {
 
     const lastId = jobs[jobs.length - 1]?.id || 1; //ex.: 1:20hr player2
 
-    jobs.push({
+    Job.create({
       id: lastId + 1,
       name: req.body.name,
       "daily-hours": req.body["daily-hours"],
       "total-hours": req.body["total-hours"],
       created_at: Date.now(), //atribuindo valor de hoje
     });
+
     return res.redirect("/");
   },
 
