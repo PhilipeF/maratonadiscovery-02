@@ -8,10 +8,10 @@ const initDb = {
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
     avatar TEXT,
-    monthley_budget INT,
+    monthly_budget INT,
     days_per_week INT,
     hours_per_day INT,
-    vocation_per_day INT,
+    vacation_per_year INT,
     value_hour INT
 )`);
 
@@ -26,10 +26,10 @@ const initDb = {
     await db.run(`INSERT INTO profile (
     name,
     avatar,
-    monthley_budget, 
+    monthly_budget, 
     days_per_week, 
     hours_per_day, 
-    vocation_per_day,
+    vacation_per_year,
     value_hour 
 ) VALUES (
     "Philipe",
